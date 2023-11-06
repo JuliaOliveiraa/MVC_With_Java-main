@@ -1,6 +1,6 @@
-package br.edu.fatec.mvcDemo.controllers;
+package br.edu.fatec.mvcDemo.controllers.eventos;
 
-import br.edu.fatec.mvcDemo.models.Aluno;
+import br.edu.fatec.mvcDemo.models.eventos.Evento;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,21 +10,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("/alunos")
-public class AlunoController {
- private static final List<Aluno>
-     alunos = new ArrayList<Aluno>();
+@RequestMapping("/eventos")
+public class EventoController {
+    private static final List<Evento> eventos = new ArrayList<Evento>();
 
-    public AlunoController() {
-        alunos.add(new Aluno("Camila","Segurança",10,10));
-        alunos.add(new Aluno("Felipe","Culinaria",5,4));
-        alunos.add(new Aluno("Ana Carolina","Viagens",10,9));
+    public EventoController() {
+        eventos.add(new Evento("Conferência de Tecnologia", "Centro de Convenções", "2023-12-10"));
+        eventos.add(new Evento("Workshop de Desenvolvimento Web", "Sala de Treinamento", "2023-11-25"));
+        eventos.add(new Evento("Hackathon da Fatec", "Laboratório de Informática", "2023-10-05"));
     }
 
     @GetMapping
-    public String getAlunos(Model model)
-    {
-        model.addAttribute("alunos",alunos);
-        return "alunos";
+    public String getEventos(Model model) {
+        model.addAttribute("eventos", eventos);
+        return "eventos";
     }
 }

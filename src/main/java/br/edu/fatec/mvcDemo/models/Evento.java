@@ -1,14 +1,17 @@
-package br.edu.fatec.mvcDemo.models;
+package br.edu.fatec.mvcDemo.models.eventos;
 
-public class Aluno {
-
+public class Evento {
     private String nome;
-    private String disciplina;
+    private String local;
+    private String data;
 
-    private double p1;
+    public Evento(String nome, String local, String data) {
+        this.nome = nome;
+        this.local = local;
+        this.data = data;
+    }
 
-    private double p2;
-
+    // Getters e setters (se necessário)
     public String getNome() {
         return nome;
     }
@@ -17,34 +20,19 @@ public class Aluno {
         this.nome = nome;
     }
 
-    public String getDisciplina() {
-        return disciplina;
+    public String getLocal() {
+        return local;
     }
 
-    public void setDisciplina(String disciplina) {
-        this.disciplina = disciplina;
+    public void setLocal(String local) {
+        this.local = local;
     }
 
-    public double getP1() {
-        return p1;
+    public String getData() {
+        return data;
     }
 
-    public void setP1(double p1) {
-        this.p1 = p1;
-    }
-
-    public double getP2() {
-        return p2;
-    }
-
-    public void setP2(double p2) {
-        this.p2 = p2;
-    }
-
-    public Aluno(String nome, String disciplina, double p1, double p2) {
-        this.nome = nome;
-        this.disciplina = disciplina;
-        this.p1 = p1;
-        this.p2 = p2;
+    public void setData(String data) {
+        this.data = data;
     }
 }
